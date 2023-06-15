@@ -5,6 +5,8 @@ import Objetos.RegistroMovimientos;
 
 import java.util.Scanner;
 
+import static Objetos.RegistroMovimientos.mostrarMovimientosUsuario;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -42,9 +44,10 @@ public class Main {
                             double saldo = sc.nextDouble();
                             String resu = Transacciones.retirar(cedula_id, saldo);
                             System.out.println(resu);
+                            break;
                         case 2:
-                            String historia = RegistroMovimientos.mostrarregistro(cedula_id);
-                            System.out.println("Sus ultimos movimientos son: " + historia);
+                            mostrarMovimientosUsuario(cedula_id);
+                            break;
                         case 3:
                             System.out.println("Bienvenido a la actualizacion de datos");
                             System.out.println("Ingresa tu cedula: ");
@@ -56,11 +59,12 @@ public class Main {
                             System.out.println("Ingrese su nuevo saldo:");
                             int nuevosaldo = sc.nextInt();
                             atm.actualizarDatosUsuario(cedula, nombre, correo, nuevosaldo);
+                            break;
                     }
                 } else {
                     System.out.println("Usuario o Contaraseña incorrecta, intenta otra vez");
                 }
-
+                break;
             case 2:
 
                 System.out.println("Formulario de creacion para nuevos usuarios");

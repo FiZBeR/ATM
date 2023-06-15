@@ -1,6 +1,7 @@
 package Objetos;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Usuario {
@@ -62,5 +63,9 @@ public class Usuario {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    public List<String> getTransacciones() {
+        return null;
     }
 }
